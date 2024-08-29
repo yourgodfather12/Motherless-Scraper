@@ -1,0 +1,7 @@
+{
+    "base_url": "https://motherless.com/gi/your_gallery_name_here",
+    "start_page": 1,
+    "end_page": 10,
+    "output_dir": "your_output_directory_here",
+    "num_threads": 5
+}
