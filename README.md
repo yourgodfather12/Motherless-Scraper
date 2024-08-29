@@ -1,25 +1,52 @@
-### Summary of Files:
+# Motherless Image Scraper
 
-- **`scraper.py`**: The main Python script for scraping images.
-- **`config.json`**: The configuration file where users can specify the gallery URL, page range, output directory, and number of threads.
-- **`requirements.txt`**: Lists all Python dependencies required by the script.
-- **`README.md`**: Instructions on how to set up and use the script.
+A Python tool for scraping images from galleries on the Motherless website using Selenium. This tool is configurable, supports concurrent downloading, and skips already downloaded images.
 
-### Next Steps:
+## Features
 
-1. **Replace Placeholders**: Before pushing to GitHub, make sure to replace `"https://github.com/yourusername/motherless-image-scraper.git"` with your actual GitHub repository URL.
-2. **Push to GitHub**:
-   - Initialize a Git repository in your project folder if it isn't already:
-     ```bash
-     git init
-     ```
-   - Add and commit your files:
-     ```bash
-     git add .
-     git commit -m "Initial commit"
-     ```
-   - Push to your GitHub repository:
-     ```bash
-     git remote add origin https://github.com/yourusername/motherless-image-scraper.git
-     git push -u origin main
-     ```
+- **Configurable**: Customize settings via `config.json`.
+- **Concurrent**: Multithreaded scraping for speed.
+- **Duplicate Handling**: Skips images that are already downloaded.
+
+## Setup
+
+### Prerequisites
+
+- **Python 3.x**
+- **Google Chrome**
+- **pip**
+
+### Installation
+
+1. **Clone the repository**:
+
+    ```bash
+    git clone https://github.com/yourusername/motherless-image-scraper.git
+    cd motherless-image-scraper
+    ```
+
+2. **Install dependencies**:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Configure**: Edit `config.json`:
+
+    ```json
+    {
+        "base_url": "https://motherless.com/gi/your_gallery_name_here",
+        "start_page": 1,
+        "end_page": 10,
+        "output_dir": "your_output_directory_here",
+        "num_threads": 5
+    }
+    ```
+
+## Usage
+
+Run the script:
+
+```bash
+python scraper.py
+Images will be saved in the specified output directory. The script automatically skips already downloaded images.
